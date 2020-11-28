@@ -101,20 +101,6 @@ public class Logic {
 		try {
 			bulletCollision();
 		} catch (Win e) {
-			System.out.println("Has Ganado");
-			System.out.println("Presiona R para reiniciar");
-			System.out.println("Presiona E para salir");
-			win = true;
-		} catch (Lose e) {
-			System.out.println("Has Perdido");
-			System.out.println("Presiona R para reiniciar");
-			System.out.println("Presiona E para salir");
-			lose = true;
-		}
-		
-		//win or lose messages
-		if (win==true) {
-
 			app.fill(0, 255, 158);
 			app.rect(100, 100, 400, 400);
 			app.fill(0);
@@ -123,19 +109,17 @@ public class Logic {
 			app.textSize(20);
 			app.text("Presiona R para reiniciar", 200, 400);
 			app.text("Presiona E para salir", 200, 450);
-
-		}
-		if (lose==true) {
-
-			app.fill(0, 255, 158);
+			win = true;
+		} catch (Lose e) {
+			app.fill(255, 0, 0);
 			app.rect(100, 100, 400, 400);
-			app.fill(0);
+			app.fill(255);
 			app.textSize(35);
 			app.text("Has perdido", 200, 200);
 			app.textSize(20);
 			app.text("Presiona R para reiniciar", 200, 400);
 			app.text("Presiona E para salir", 200, 450);
-
+			lose = true;
 		}
 	}
 
