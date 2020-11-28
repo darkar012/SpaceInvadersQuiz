@@ -4,7 +4,7 @@ import processing.core.PApplet;
 
 public class Alien extends Character implements Runnable{
 	
-	
+	private boolean isDead;
 	
 	public Alien(int posX, int posY, PApplet app) {
 		super(app);
@@ -13,6 +13,7 @@ public class Alien extends Character implements Runnable{
 		this.posX = posX;
 		this.posY = posY;
 		changeSide=true;
+		isDead=false;
 	}
 
 	public void run() {
@@ -39,6 +40,15 @@ public class Alien extends Character implements Runnable{
 	public void moveVertical() {
 		posY = posY +50;
 	}
+
+	public boolean isDead() {
+		return isDead;
+	}
+
+	public void setDead(boolean isDead) {
+		this.isDead = isDead;
+	}
+	
 	
 }
 

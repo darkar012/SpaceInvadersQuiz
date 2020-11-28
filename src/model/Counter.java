@@ -13,6 +13,9 @@ public class Counter {
 	public void drawCounter (int posY) {
 		app.fill(255);
 		app.text("Naves Eliminadas "+ quantity, 40 , posY);
+		app.text("Presione S para disparar ", 40 , posY*2);
+		app.text("Con las flechitas se mueve ", 40 , posY*3);
+		app.text("Si hizo lo que se pudo profe, perdone lo poquito ", 40 , posY*4);
 	}
 	public PApplet getApp() {
 		return app;
