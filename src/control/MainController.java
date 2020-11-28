@@ -1,5 +1,7 @@
 package control;
 
+//class MainController Package Controller
+
 import model.Logic;
 import processing.core.PApplet;
 

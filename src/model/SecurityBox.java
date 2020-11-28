@@ -1,7 +1,7 @@
 package model;
 
 import processing.core.PApplet;
-
+//Class SecurityBox Extends PApplet, Package Logic
 public class SecurityBox extends PApplet{
 
 	private PApplet app;
@@ -15,12 +15,15 @@ public class SecurityBox extends PApplet{
 		this.posY = posY;
 		speed = 5;
 	}
+	
+	//draw method
 	public void drawBox(int sizeX, int sizeY) {
 		app.fill(0,0,255,0);
 		app.stroke(0,0,255,0);
 		app.rect(posX,posY, sizeX,sizeY );
 	}
 
+	//move method
 	public void moveBox() {
 		posX += speed;
 		if (posX < 0) {
@@ -32,6 +35,8 @@ public class SecurityBox extends PApplet{
 			speed *=-1;
 		}
 	}
+	
+	//getters and setters
 	public PApplet getApp() {
 		return app;
 	}

@@ -2,6 +2,8 @@ package model;
 
 import processing.core.PApplet;
 
+//Class Bullet Extends PApplet and Implements Runnable to use threads, Package Logic
+
 public class Bullet extends PApplet implements Runnable {
 	PApplet app;
 	private int posX;
@@ -14,23 +16,20 @@ public class Bullet extends PApplet implements Runnable {
 		speed = 6;
 		this.app = app;
 	}
-
+	
+	//draw method
 	public void drawBullet() {
 		app.fill(203,52,248);
 		app.ellipse(posX, posY ,10,10);
 	}
-
-	/*public boolean collision (int otherX,int otherY) {
-		if(app.dist(posX, posY, otherX, otherY) < 15) {
-			return true;	
-		}
-		return false;
-	}*/
 	
+	// run method for the thread
 	public void run() {
 		moveBullet();
 		
 	}
+	
+	//getters and setters
 	public void moveBullet () {
 		posY -= speed;
 	}

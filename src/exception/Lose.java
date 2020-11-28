@@ -1,5 +1,5 @@
 package exception;
-
+//exception Lose Package Exception
 public class Lose extends Exception {
 
 	private static final long serialVersionUID = 1L;

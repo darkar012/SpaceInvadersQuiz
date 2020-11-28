@@ -2,6 +2,8 @@ package model;
 
 import processing.core.PApplet;
 
+//Father Class Character Package Model
+
 public abstract class Character implements Runnable {
 	
 	protected PApplet app;
@@ -19,6 +21,7 @@ public abstract class Character implements Runnable {
 	public abstract void drawChar();
 	public abstract void moveChar();
 
+	//getters and setters
 	public PApplet getApp() {
 		return app;
 	}

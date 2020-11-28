@@ -2,6 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
+//Class Hero Extends of Father Class Character and Implements Runnable to use threads, Package Logic
 public class Hero extends Character implements Runnable{
 
 	public Hero(PApplet app) {
@@ -12,6 +13,7 @@ public class Hero extends Character implements Runnable{
 		size = 50;
 	}
 	
+	//draw method
 	public void drawChar() {
 		
 		app.fill(200,116,178);
@@ -19,6 +21,7 @@ public class Hero extends Character implements Runnable{
 		
 	}
 	
+	//move method
 	public void moveChar() {
 		
 		switch (key) {
@@ -40,6 +43,7 @@ public class Hero extends Character implements Runnable{
 		
 	}
 	
+	// run method for the thread
 	public void run() {
 		moveChar();
 		

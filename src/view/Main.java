@@ -3,6 +3,8 @@ package view;
 import control.MainController;
 import processing.core.PApplet;
 
+//class Main Package View
+
 public class Main extends PApplet {
 	
 	MainController control;

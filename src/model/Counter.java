@@ -2,6 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
+//Class Counter Package Logic
 public class Counter {
 	private PApplet app;
 	private int quantity;
@@ -10,6 +11,8 @@ public class Counter {
 		this.app = app;
 		quantity = 0;
 	}
+	
+	//draw method
 	public void drawCounter (int posY) {
 		app.fill(255);
 		app.text("Naves Eliminadas "+ quantity, 40 , posY);
@@ -17,6 +20,8 @@ public class Counter {
 		app.text("Con las flechitas se mueve ", 40 , posY*3);
 		app.text("Si hizo lo que se pudo profe, perdone lo poquito ", 40 , posY*4);
 	}
+	
+	//getters and setters
 	public PApplet getApp() {
 		return app;
 	}
