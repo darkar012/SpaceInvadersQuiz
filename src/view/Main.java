@@ -31,12 +31,12 @@ public class Main extends PApplet {
 	
 	public void keyPressed() {
 		int key = keyCode;
-		control.moveHero(key);
+		control.change(key);
 	}
 	
 	public void keyReleased() {
 		int key = keyCode;
-		control.notMoveHero(key);
+		control.notChange(key);
 	}
 }
 

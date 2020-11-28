@@ -17,10 +17,10 @@ public class MainController {
 	public void drawGame() {
 		logic.drawGame();
 	}
-	public void moveHero(int key) {
-		logic.moveHero(key);
+	public void change(int key) {
+		logic.change(key);
 	}
-	public void notMoveHero(int key) {
-		logic.notMoveHero(key);
+	public void notChange(int key) {
+		logic.notChange(key);
 	}
 }

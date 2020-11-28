@@ -142,17 +142,20 @@ public class Logic {
 	//method to calculate the collision between bullets and aliens
 	public void bulletCollision() throws Win, Lose {
 		for (int i = 0; i < bulletList.size(); i++) {
-			for (int j = 0; j < alienList.size(); j++) {
+			for (int j = 0; j < alienList.size()/2; j++) {
 				int otherX = alienList.get(j).getPosX();
 				int otherY = alienList.get(j).getPosY();
 				int bPosX = bulletList.get(i).getPosX();
 				int bPosY = bulletList.get(i).getPosY();
 				
 				//dist used to define the minimun distance between the objects
-				if(app.dist( bPosX, bPosY, otherX, otherY) < 15) {
+				if(app.dist( bPosX, bPosY, otherX, otherY) < 40) {
 					//cause problems with the remove, a solution was to send the element in the list to a place outside the canvas
-					bulletList.get(i).setPosX(-20);
-					alienList.get(j).setPosX(960);
+					bulletList.get(i).setPosX(-589);
+					if (bulletList.get(i).getPosY() == 10) {
+						bulletList.remove(i);
+					}
+					alienList.get(j).setPosX(2060);
 					alienList.get(j).setPosY(0);
 					alienList.get(j).setDead(true);
 					//death aliens add to the counter
@@ -164,7 +167,7 @@ public class Logic {
 				
 				 //throw of exceptions
 				
-				if (counter.getQuantity() == (alienList.size()/2)+2) {
+				if (counter.getQuantity() == (alienList.size()/2)) {
 					throw new Win ("Has Ganado");
 				}
 
@@ -181,7 +184,7 @@ public class Logic {
 
 
 	//movement and other keyboard process to activate threads or restart and exit the game
-	public void moveHero(int key) {
+	public void change(int key) {
 
 		hero.setKey(key);
 
@@ -223,7 +226,7 @@ public class Logic {
 	
 	
 	//movement keyboard process to improve the movement
-	public void notMoveHero(int key) {
+	public void notChange(int key) {
 
 		int not = key;
 
