@@ -3,13 +3,16 @@ package model;
 import processing.core.PApplet;
 
 public class Alien extends Character implements Runnable{
-
+	
+	
+	
 	public Alien(int posX, int posY, PApplet app) {
 		super(app);
 		speed = 5;
 		size = 40;
 		this.posX = posX;
 		this.posY = posY;
+		changeSide=true;
 	}
 
 	public void run() {
@@ -17,20 +20,25 @@ public class Alien extends Character implements Runnable{
 	}
 
 	public void drawChar() {
+	app.fill(0,255,0);
 	app.rect(posX, posY, size, size);
 	}
 
 	public void moveChar() {
-		posX += speed;
-		if (posX < 0) {
-			speed = speed*-1;
-			posY = posY +50;
+		
+		if (changeSide) {
+			posX += speed;
 		}
 		
-		if(posX > 600-(size/2)){
-			speed *=-1;
-			posY = posY +50;
+		if(!changeSide){
+			posX -= speed;
+			//posY = posY +50;
 		}
 
+	}
+	public void moveVertical() {
+		posY = posY +50;
+	}
+	
 }
-}
+

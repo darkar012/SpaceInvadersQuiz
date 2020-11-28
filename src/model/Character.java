@@ -10,6 +10,7 @@ public abstract class Character implements Runnable {
 	protected int speed;
 	protected int size;
 	protected int key;
+	protected boolean changeSide;
 	
 	public Character (PApplet app) {
 		this.app = app;
@@ -64,6 +65,13 @@ public abstract class Character implements Runnable {
 
 	public void setKey(int key) {
 		this.key = key;
+	}
+	public boolean isChangeSide() {
+		return changeSide;
+	}
+
+	public void setChangeSide(boolean changeSide) {
+		this.changeSide = changeSide;
 	}
 	
 	
